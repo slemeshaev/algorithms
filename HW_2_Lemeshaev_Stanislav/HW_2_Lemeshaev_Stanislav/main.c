@@ -28,20 +28,11 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-//procedure dectobin(dec:word;var res:string);
-//var s:string;
-//begin
-//if dec>1 then dectobin((dec div 2),res) else res:='';
-//str((dec mod 2),s);
-//res:=res+s;
-//end;
 // 1. Реализовать функцию перевода из десятичной системы в двоичную, используя рекурсию.
-int DecToBin(int dec) {
-    char *bin;
-    if (dec > 1) {
-        return DecToBin(dec / 10);
-    }
-    else {
-        return bin = "";
-    }
+int DecToBin(int dec)
+{
+    if (dec < 2)
+        return dec;
+    else
+        return DecToBin(dec / 2) * 10 + dec % 2;
 }
