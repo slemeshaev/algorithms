@@ -5,17 +5,11 @@
 //  Created by Станислав Лемешаев on 02/02/2019.
 //  Copyright © 2019 Станислав Лемешаев. All rights reserved.
 
-//3. Исполнитель Калькулятор преобразует целое число, записанное на экране. У исполнителя две команды, каждой команде присвоен номер:
-//Прибавь 1
-//Умножь на 2
-//Первая команда увеличивает число на экране на 1, вторая увеличивает это число в 2 раза. Сколько существует программ, которые число 3 преобразуют в число 20?
-//а) с использованием массива;
-//б) с использованием рекурсии.
-
 #include <stdio.h>
 int convertDecToBin(int n);
 int cyclePower(int a, int b);
 int recPower(int a, int b);
+int quickPower(int a, int b);
 
 int main(int argc, const char * argv[]) {
     // 1. Реализация первой задачи
@@ -32,8 +26,9 @@ int main(int argc, const char * argv[]) {
     printf("%d to degree %d is %d\n", x, y, cyclePower(x, y));
     // b. рекурсивно;
     printf("%d to degree %d is %d\n", x, y, recPower(x, y));
+    // используя свойство четности степени
+    printf("%d to degree %d is %d\n", x, y, quickPower(x, y));
     // c. *рекурсивно, используя свойство четности степени
-    
     return 0;
 }
 
@@ -70,4 +65,34 @@ int recPower(int a, int b) {
     }
 }
 
+// используя свойство четности степени
+int quickPower(int a, int b) {
+    int n = 1;
+    while (b) {
+        if (b % 2) {
+            b--;
+            n *= a;
+        }
+        else {
+            a *= a;
+            b /= 2;
+        }
+    }
+    return n;
+}
+
 // c. *рекурсивно, используя свойство четности степени.
+//int quickPowerRec(int a, int b) {
+//    int n = 1;
+//    while (b) {
+//        if (b % 2) {
+//            b--;
+//            n *= a;
+//        }
+//        else {
+//            a *= a;
+//            b /= 2;
+//        }
+//    }
+//    return n;
+//}
