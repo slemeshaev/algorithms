@@ -10,7 +10,6 @@ int convertDecToBin(int n);
 int cyclePower(int a, int b);
 int recPower(int a, int b);
 int quickPower(int a, int b);
-int quickPowerRec(int a, int b);
 
 int main(int argc, const char * argv[]) {
     // 1. Реализация первой задачи
@@ -30,7 +29,6 @@ int main(int argc, const char * argv[]) {
     // используя свойство четности степени
     printf("%d to degree %d is %d\n", x, y, quickPower(x, y));
     // c. *рекурсивно, используя свойство четности степени
-    printf("%d to degree %d is %d\n", x, y, quickPowerRec(x, y));
     return 0;
 }
 
@@ -84,15 +82,17 @@ int quickPower(int a, int b) {
 }
 
 // c. *рекурсивно, используя свойство четности степени.
-int quickPowerRec(int a, int b) {
-    if (b == 0)
-        return 1;
-    if (b == 1)
-        return a;
-    if (b % 2 != 0) {
-        return a * quickPowerRec(a, b - 1);
-    }
-    else {
-        return quickPowerRec(a * a, b / 2);
-    }
-}
+//int quickPowerRec(int a, int b) {
+//    int n = 1;
+//    while (b) {
+//        if (b % 2) {
+//            b--;
+//            n *= a;
+//        }
+//        else {
+//            a *= a;
+//            b /= 2;
+//        }
+//    }
+//    return n;
+//}
