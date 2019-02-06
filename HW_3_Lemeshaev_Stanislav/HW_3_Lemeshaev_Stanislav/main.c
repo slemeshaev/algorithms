@@ -109,7 +109,7 @@ void shakerSort(int *array, int length)
     printf("Count of operations Shaker sort: %d\n", rightCount + leftCount);
 }
 
-// binary search
+// Binary search
 int binarySearch(int *array, int length, int key) {
     int left = 0; // задаем левую и правую границы поиска
     int right = length - 1;
