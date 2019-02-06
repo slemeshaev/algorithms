@@ -109,6 +109,26 @@ void shakerSort(int *array, int length)
     printf("Count of operations Shaker sort: %d\n", rightCount + leftCount);
 }
 
+// binary search
+int binarySearch(int *array, int length, int key) {
+    int left = 0; // задаем левую и правую границы поиска
+    int right = length - 1;
+    bubbleSortNew(array, length); // отсортировываем массив
+    while (left <= right) // пока левая граница не "перескочит" правую
+    {
+        int mid = (left + right) / 2; // ищем середину отрезка
+        if (key == array[mid]) {  // если ключевое поле равно искомому
+            return mid;     // возвращаем требуемый элемент,
+            break;          // выходим из цикла
+        }
+        if (key < array[mid]) // если искомое ключевое поле меньше найденной середины
+            right = mid - 1;  // смещаем правую границу, продолжим поиск в левой части
+        else                  // иначе
+            left = mid + 1;   // смещаем левую границу, продолжим поиск в правой части
+    }
+    return -1; // найденный индекс элемента равен -1 (элемент не найден)
+}
+
 // main function
 int main() {
     const int SIZE = 10;
@@ -132,6 +152,12 @@ int main() {
     printf("\nArray after sort:\n");
     shakerSort(A, SIZE);
     printArray(A, SIZE);
+    
+    //3. Реализовать бинарный алгоритм поиска в виде функции, которой передается отсортированный массив. Функция возвращает индекс найденного элемента или -1, если элемент не найден.
+    printf("\nWhat item do you want to find? ");
+    int item;
+    scanf("%d", &item);
+    printf("Такой элемент находится под номером: %d ", binarySearch(A, SIZE, item));
     printf("\n");
     return 0;
 }
