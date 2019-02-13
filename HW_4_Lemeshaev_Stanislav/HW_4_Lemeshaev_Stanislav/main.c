@@ -14,16 +14,14 @@ int ktmov1[8] = { -2, -1, 1, 2, 2, 1, -1, -2 };
 int ktmov2[8] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int ikon=0,jkon=0,nomerHoda=1;
 
-void solution1();
-void solution2();
-void solution3();
-
-
 void searchSolution(int N, int M, int board[][M], int row[N*M], int col[N*M]);
 int checkBoard();
 int checkKnight(int x, int y);
 void printBoard(int N, int M, int board[][M]);
 
+void solution1();
+void solution2();
+void solution3();
 
 void menu();
 
@@ -54,6 +52,7 @@ void menu()
     
     printf("0 - exit\n");
 }
+
 void solution1(){
     int N;
     printf("Введите количество строк в карте \n");
@@ -142,25 +141,22 @@ void solution2(){
         a[0][j]=0;
     }
     //Заполняем оставшуюся часть массива
-    for(int i=1;i<N;i++){
-        for(int j=1;j<M;j++){
-            if(S1[i-1]==S2[j-1])a[i][j]=a[i-1][j-1]+1;
-            else a[i][j] = a[i-1][j]>a[i][j-1] ? a[i-1][j] : a[i][j-1];
+    for(int i = 1;i < N; i++){
+        for(int j = 1;j < M;j++){
+            if(S1[i-1] == S2[j-1]) a[i][j] = a[i-1][j-1]+1;
+            else a[i][j] = a[i-1][j] > a[i][j-1] ? a[i-1][j] : a[i][j-1];
         }
     }
     
     printf("Заполненный массив:\n");
-    for(int i=0;i<N;i++){
-        for(int j=0;j<M;j++){
-            printf("%i ",a[i][j]);
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < M; j++){
+            printf("%i ", a[i][j]);
         }
         printf("\n");
     }
     
     printf("Получившийся ответ: %i\n", a[N-1][M-1]);
-    
-    
-    
 }
 
 void solution3(){
