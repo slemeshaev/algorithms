@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		66C277C822226BBE0052463C /* HW_7_Lemeshaev_Stanislav */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HW_7_Lemeshaev_Stanislav; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C277CB22226BBE0052463C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		66C277D222226F450052463C /* libGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libGraph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		66C277CA22226BBE0052463C /* HW_7_Lemeshaev_Stanislav */ = {
 			isa = PBXGroup;
 			children = (
+				66C277D222226F450052463C /* libGraph.h */,
 				66C277CB22226BBE0052463C /* main.c */,
 			);
 			path = HW_7_Lemeshaev_Stanislav;
